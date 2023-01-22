@@ -40,6 +40,8 @@ phoneNumber.addEventListener("input", (e) => {
     phoneNumber.style.background = "rgba(156, 156, 255, 0.2)";
   } else {
     phoneError.textContent = "Please use only numbers";
+    phoneNumber.style.outline = "1.5px rgb(255, 156, 156) solid";
+    phoneNumber.style.background = "rgba(255, 156, 156, 0.2)";
   }
 });
 
