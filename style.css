@@ -1,0 +1,327 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "Norse Bold";
+  src: url("fonts/norse-bold-webfont.woff2") format("woff2");
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.container {
+  display: flex;
+  border: 2px black solid;
+  height: 100vh;
+}
+
+.container .left-side {
+  background: url("img/bg-image.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  flex-grow: 5;
+  position: relative;
+}
+.container .left-side .logo {
+  padding: 10px 0;
+  margin-right: 100px;
+  position: relative;
+  top: 20vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.container .left-side .logo img {
+  width: 100px;
+}
+.logo-text {
+  color: white;
+  font-size: 5rem;
+  font-family: "Norse Bold", sans;
+}
+
+.container .right-side {
+  flex-grow: 3;
+  width: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(235, 235, 235);
+}
+
+.container .right-side .heading {
+  padding: 30px;
+  margin: 50px 0;
+  font-size: 1.4rem;
+}
+.right-side .form-container {
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.right-side .form-container p {
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.right-side .form-bg {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: baseline;
+}
+.form-bg .input-box {
+  padding: 5px 30px;
+  width: calc(30% - 10px);
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.right-side button {
+  margin: 30px;
+  padding: 10px 30px;
+  font-size: 1.15rem;
+  background-color: #596d48;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.input-box input {
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 1.5px rgb(219, 219, 219) solid;
+  border-radius: 5px;
+}
+.input-box input:hover {
+  background-color: rgb(243, 243, 243);
+  transition: all ease-in-out 0.25s;
+  box-shadow: 0px 0px 5px 5px rgba(172, 172, 172, 0.1);
+}
+.input-box input:focus {
+  outline: 1.5px rgb(156, 156, 255) solid;
+}
+
+.input-box label {
+  display: block;
+  font-size: small;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-bottom: 2px;
+}
+.email-error,
+.phone-error,
+.password-error {
+  padding: 0;
+  font-size: smaller;
+  color: rgb(151, 0, 0);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+.sign-in {
+  padding-left: 30px;
+  font-size: 1.1rem;
+}
+.sign-in a {
+  text-decoration: none;
+  color: #596d48;
+  font-weight: 500;
+}
+@media all and (max-width: 950px) {
+  .form-bg .input-box {
+    padding: 5px 30px;
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+  }
+  .container .left-side {
+    background: url("img/bg-image.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    width: 100%;
+    position: relative;
+  }
+  .container .left-side .logo {
+    padding: 10px 0;
+    margin-right: 100px;
+    position: relative;
+    top: 20vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .container .right-side {
+    flex-grow: 3;
+    width: 100vh;
+    font-family: "Roboto", sans-serif;
+    width: 50vh;
+  }
+  .container .right-side .heading {
+    font-size: 1.6rem;
+    margin: 20px 0;
+  }
+  .form-bg .input-box {
+    padding: 5px 30px;
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .right-side button {
+    margin: 30px;
+    padding: 10px 30px;
+    font-size: 1.15rem;
+    background-color: #596d48;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    justify-self: center;
+    display: flex;
+    margin: 20px auto;
+    display: block;
+  }
+  .sign-in {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    margin-right: 30px;
+  }
+}

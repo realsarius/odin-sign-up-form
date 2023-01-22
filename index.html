@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Sign Up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <div class="logo">
+          <img src="img/odin-lined.png" alt="odin-logo" />
+          <span class="logo-text">ODIN</span>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="heading">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            to get started.
+          </p>
+          <br />
+          <p>You know you want to.</p>
+        </div>
+        <div class="form-container">
+            <form action="">
+                <p>Let's do this!</p>
+                <div class="form-bg">
+                  <div class="input-box">
+                    <label for="first-name">FIRST NAME</label>
+                    <input
+                      type="text"
+                      name="first-name"
+                      id="first-name"
+                      minlength="2"
+                      maxlength="20"
+                      placeholder="John"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <label for="last-name">LAST NAME</label>
+                    <input
+                      type="text"
+                      name="last-name"
+                      id="last-name"
+                      minlength="2"
+                      maxlength="20"
+                      placeholder="Doe"
+                      required
+                    />
+                  </div>
+                  <div class="input-box">
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="awesome@email.com"  required />
+                    <div class="email-error"></div>
+                  </div>
+                  <div class="input-box">
+                    <label for="phone-number">PHONE NUMBER</label>
+                    <input
+                      type="tel"
+                      name="phone-number"
+                      id="phone-number"
+                      pattern="^\+?\d{0,13}"
+                      placeholder="+123456789"
+                      required
+                    />
+                    <div class="phone-error"></div>
+                  </div>
+                  <div class="input-box">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" id="password" required />
+                    <div class="password-error"></div>
+                  </div>
+                  <div class="input-box">
+                    <label for="confirm-password">CONFIRM PASSWORD</label>
+                    <input
+                      type="password"
+                      name="confirm-password"
+                      id="confirm-password"
+                      required
+                    />
+                  </div>
+                </div>
+        </div>
+        
+          <button type="submit">Create Account</button>
+        </form>
+        <div class="sign-in">
+          Already have an account? <a href="#">Log in</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
