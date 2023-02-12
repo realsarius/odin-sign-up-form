@@ -2,11 +2,11 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @font-face {
-  font-family: "Norse Bold";
-  src: url("fonts/norse-bold-webfont.woff2") format("woff2");
+  font-family: 'Norse Bold';
+  src: url('fonts/norse-bold-webfont.woff2') format('woff2');
 }
 
 html,
@@ -126,7 +126,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -135,12 +135,11 @@ table {
 }
 .container {
   display: flex;
-  border: 2px black solid;
   height: 100vh;
 }
 
 .container .left-side {
-  background: url("img/bg-image.jpg");
+  background: url('img/bg-image.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   flex-grow: 5;
@@ -164,13 +163,13 @@ table {
 .logo-text {
   color: white;
   font-size: 5rem;
-  font-family: "Norse Bold", sans;
+  font-family: 'Norse Bold', sans;
 }
 
 .container .right-side {
   flex-grow: 3;
   width: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: rgb(235, 235, 235);
 }
 
@@ -210,6 +209,11 @@ table {
   color: white;
   border: none;
   border-radius: 5px;
+  transition: background-color ease-in-out 200ms;
+  cursor: pointer;
+}
+.right-side button:hover {
+  background-color: #7a886f;
 }
 .input-box input {
   padding: 10px;
@@ -262,6 +266,140 @@ table {
   }
 }
 
+.header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(126, 126, 126);
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header-right-side {
+  display: flex;
+  align-items: center;
+}
+
+.header-right-side ul {
+  display: flex;
+  margin-right: 1rem;
+  gap: 1rem;
+}
+
+.header-right-side ul a {
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  transition: background-color ease-in-out 200ms;
+}
+
+.header-right-side ul a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header-left-side .header-logo {
+  display: flex;
+  height: 100%;
+  gap: 1rem;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.header-left-side .logo {
+  padding: 10px 0;
+  margin-right: 100px;
+  position: relative;
+  top: 20vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.header-left-side .header-logo img {
+  width: 1.8rem;
+}
+.header-left-side .logo-text {
+  color: white;
+  font-size: 5rem;
+  font-family: 'Norse Bold', sans;
+}
+.footer {
+  background-color: rgb(235, 235, 235);
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.header-right-side-mobile {
+  background-color: #f3f3f3;
+  display: flex;
+  align-items: baseline;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #777;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown.active > .link:focus,
+.link:hover {
+  color: black;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  z-index: 1;
+  position: absolute;
+  left: -6rem;
+  top: calc(100% + 0.25rem);
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .link + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-links {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  gap: 1rem;
+}
+.header-right-side-mobile {
+  display: none;
+}
+
 @media all and (max-width: 640px) {
   .container {
     display: flex;
@@ -270,12 +408,20 @@ table {
     align-items: center;
     background-color: rgb(235, 235, 235);
   }
+  .header-right-side-mobile {
+    display: none;
+  }
+  .container .bg-color {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+  }
   .container .left-side {
-    background: url("img/bg-image.jpg");
+    background: url('img/bg-image.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     width: 100%;
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .container .left-side .logo {
     padding: 10px 0;
@@ -283,7 +429,7 @@ table {
     position: relative;
     top: 20vh;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0);
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -292,12 +438,19 @@ table {
   .container .right-side {
     flex-grow: 3;
     width: 100vh;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     width: 50vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
   }
   .container .right-side .heading {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 20px 0;
+    padding: 0;
   }
   .form-bg .input-box {
     padding: 5px 30px;
@@ -305,6 +458,14 @@ table {
     margin-left: 10px;
     margin-top: 10px;
   }
+  .form-container {
+    border-radius: 1rem;
+  }
+  .form-container form {
+    border-radius: 1rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
   .right-side button {
     margin: 30px;
     padding: 10px 30px;
@@ -319,9 +480,37 @@ table {
     display: block;
   }
   .sign-in {
-    margin: 20px auto;
-    display: block;
+    padding: 0;
     text-align: center;
-    margin-right: 30px;
+  }
+  .header {
+    flex-direction: column;
+    height: 7rem;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .footer {
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .header {
+    flex-direction: row;
+    height: 4rem;
+    justify-content: space-between;
+  }
+  .header-right-side {
+    display: none;
+  }
+  .header-right-side-mobile {
+    display: flex;
+    border-radius: 10px;
   }
 }
